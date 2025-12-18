@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Welcome to the Study Planner</h1>
-    <p>Plan your study sessions easily.</p>
+<div class="card">
+    <div class="card-icon">📚</div>
+    <h3>Add New Study Task</h3>
+    <p>Organize your schedule by adding a new goal below.</p>
+    
+    <form action="/add" method="POST">
+        <input type="text" name="task" placeholder="Enter task name..." required>
+        <button type="submit" class="btn-primary">Add Task —></button>
+    </form>
+</div>
 {% endblock %}

@@ -15,7 +15,9 @@ def planner():
 
 # This part is crucial for Render.com deployment
 if __name__ == "__main__":
-    # Render provides a PORT environment variable. If it's not there, it uses 5000.
-    port = int(os.environ.get("PORT", 5000))
-    # '0.0.0.0' allows the app to be accessible on the web
-    app.run(host='0.0.0.0', port=port)
+    # Get the port from the environment (Render needs this)
+    # Default to 5001 to avoid the Mac AirPlay conflict
+    port = int(os.environ.get("PORT", 5006))
+    
+    # Run the app on 0.0.0.0 so it's accessible to the web
+    app.run(host='0.0.0.0', port=port, debug=True)
